@@ -72,7 +72,7 @@ const two_expected4 = "GIT";
 function acronymize(str){
     arr = [];
     num = 0;
-    for(i=0;i<str.length;i++){
+    for(i=0;i<str.length;i++){ //adds all characters in the string to a nested array and creates a new array for each word at a space character
         if(str[i] == " "){
             num++;
         }
