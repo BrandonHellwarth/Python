@@ -70,20 +70,27 @@ const two_expected4 = "GIT";
  * @returns {string} The acronym.
  */
 function acronymize(str){
-    arr = [];
+    arr = [[]]; //arr[num] needs to be initialy defined
     num = 0;
-    for(i=0;i<str.length;i++){ //adds all characters in the string to a nested array and creates a new array for each word at a space character
+    for(i=0;i<str.length;i++){ //adds all characters in the string to a nested array and creates a new nested array for each word at a space character
         if(str[i] == " "){
             num++;
+            arr.push([]); //need to define a new arr[num] for each space(new word)
         }
         else{
-            arr[num].push(str[i]);//not sure why this is undefined
+            arr[num].push(str[i]);
         }
     }
+    for(i=0;i<arr.length;i++){//checks for empty arrays and removes them
+        if(arr[i] == "cda"){
+            arr.pop(arr[i]);
+        }
+    }
+    console.log(arr);
     arr1 = [];
-    for(i=0;i<arr.length;i++){
-        arr1.push(toUpperCase(arr[i][0]));
+    for(i=0;i<arr.length;i++){//adds each nested arrays first index place to a new array and changes it to uppercase
+        arr1.push(arr[i][0].toUpperCase());
     }
     return arr1;
 }
-console.log(acronymize(two_str2));
+console.log(acronymize(two_str4));
