@@ -28,7 +28,7 @@ class Character:
                 print(f"{target.name} is the winner!")
                 return self
             if target.health > 0:
-                if self.speed >= random.randint(0, 20):
+                if self.speed >= random.randint(0, 100):
                     print(f"{self.name} dodged {target.name}'s attack!")
                 else:
                     print(f"{target.name} did {target.strength} damage to {self.name}")
@@ -40,7 +40,7 @@ class Character:
 
 class Ninja( Character ):
 
-    def __init__(self , name, strength = 5, speed = 50,):
+    def __init__(self , name, strength = 10, speed = 60):
         super().__init__(name, strength, speed)
     
     def show_stats( self ):
@@ -51,7 +51,7 @@ class Ninja( Character ):
 
 class Pirate( Character ):
 
-    def __init__( self , name, strength = 10, speed = 25, health = 150):
+    def __init__( self , name, strength = 15, speed = 25, health = 150):
         super().__init__(name, strength, speed, health)
 
     def show_stats( self ):

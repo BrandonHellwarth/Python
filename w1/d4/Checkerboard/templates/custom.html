@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Checkerboard</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'style1.css')}}">
+</head>
+<body>
+    {% for num in range(y) %}
+    <div class="row">
+        {% if x % 2 == 0 %}
+        {% for num1 in range(x / 2) %}
+        <div class="box1"></div>
+        <div class="box2"></div>
+        {% endfor %}
+        {% else %}
+        {% for num1 in range(x / 2) - 1 %}
+        <div class="box1"></div>
+        <div class="box2"></div>
+        {% endfor %}
+        <div class="box1"></div>
+        {% endif %}
+    </div>
+    {% endfor %}
+</body>
+</html>
