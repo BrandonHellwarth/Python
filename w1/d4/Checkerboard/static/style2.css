@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    text-align: center;
+    padding: 0px 400px;
+}
+#header{
+    text-align: center;
+    padding: 20px;
+    background-color: {{ color2 }};
+    color: {{ color1 }};
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.row{
+    display: flex;
+    padding: 0px 80px;
+}
+.box1{
+    height: 50px;
+    width: 100%;
+    background-color: {{ color1 }};
+}
+.box2{
+    height: 50px;
+    width: 100%;
+    background-color: {{ color2 }};
+}
