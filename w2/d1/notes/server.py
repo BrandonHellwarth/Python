@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, redirect, session
 app = Flask(__name__)
 app.secret_key = "shhhhhhhhhhh"#need this statement to use session(session is a global dictionary, compared to normal dictionary, it can be used by all functions while being embeded in one)
-#use this statement to generate a new guid in the console: [guid]::NewGuid()
 
 
 #Action Route
@@ -15,7 +14,7 @@ def hello_world():
 def process_info():
     print(f"You have now purchased a new {request.form['item']}!")
     print(request.form)
-    credit_card_number = request.form['credit_card_number']
+    # credit_card_number = request.form['credit_card_number']
     session['ccn'] = str(request.form['credit_card_number'])[-4:]
     #what you want to do
     return redirect('/tracking_info')
