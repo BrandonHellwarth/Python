@@ -18,14 +18,33 @@ p{
     margin: 0px 50px;
 }
 #click{
-    width: 50px;
+    padding: 0px 10px;
     height: 30px;
     background-color: blue;
     color: yellow;
     border-radius: 5px;
 }
+#plus_two{
+    padding: 0px 10px;
+    height: 30px;
+    background-color: green;
+    color: orange;
+    border-radius: 5px;
+}
+#custom{
+    height: 30px;
+    width: 200px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+#enter{
+    height: 30px;
+    padding: 0px 10px;
+    background-color: purple;
+    color: gold;
+}
 #reset{
-    width: 50px;
+    padding: 0px 10px;
     height: 30px;
     background-color: red;
     color: aqua;
@@ -34,6 +53,14 @@ p{
 #click:hover{
     background-color: yellow;
     color: blue;
+}
+#plus_two:hover{
+    background-color: orange;
+    color: green;
+}
+#enter:hover{
+    background-color: gold;
+    color: purple;
 }
 #reset:hover{
     background-color: aqua;
