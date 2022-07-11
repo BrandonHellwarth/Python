@@ -17,16 +17,13 @@ pip install pipenv
     pipenv shell or varient
     ```
 - create a server.py file
-    ```py
-    from flask import Flask, render_template, request, redirect
-    app = Flask(__name__)
-    # THIS IS GOING TO MOVE IN THE FUTURE
-    @app.route('/') 
-    def hello_world():
-        return 'Hello world!'
-    # END OF MOVING AREA
-
+```py
+from flask import Flask, render_template, request, redirect
+app = Flask(__name__)
+@app.route('/') 
+def hello_world():
+    return 'Hello world!'
     #THIS MUST BE ON THE BOTTOM OF THIS FILE
-    if __name__=="__main__":
-        app.run(debug=True)
-    ```
+if __name__=="__main__":
+    app.run(debug=True)
+```
