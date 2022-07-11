@@ -9,7 +9,10 @@
 </head>
 <body>
     <h1>Counter</h1>
-    <p>{{ session['num'] }}</p>
+    <div id="nums">
+        <p>Number of visits to this site: {{ session['visits'] }}</p>
+        <p>Current number count: {{ session['num'] }}</p>
+    </div>
     <div id="forms">
         <form action = "/process_click" method = 'post'>
             <button name = "click" id = "click" onmouseover = >Click</button>

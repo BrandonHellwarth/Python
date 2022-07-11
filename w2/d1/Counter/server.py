@@ -4,6 +4,7 @@ app.secret_key = "abcdefg"
 
 @app.route('/') 
 def Counter():
+    session['visits'] = 1
     session['num'] = 0
     return render_template('index.html')
 
@@ -13,16 +14,19 @@ def destroy_session():
 
 @app.route('/process_click', methods = ['POST'])
 def process_click():
+    session['visits'] +=1
     session['num'] +=1
     return redirect('/newcount')
 
 @app.route('/process_plustwo', methods = ['POST'])
 def process_plustwo():
+    session['visits'] +=1
     session['num'] +=2
     return redirect('/newcount2')
 
 @app.route('/process_custom', methods = ['POST'])
 def process_custom():
+    session['visits'] +=1
     session['num'] += int(request.form['custom'])
     return redirect('/newcountcustom')
 
