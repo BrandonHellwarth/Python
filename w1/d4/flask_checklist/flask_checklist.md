@@ -18,7 +18,7 @@ pip install pipenv
     ```
 - create a server.py file
     ```py
-    from flask import Flask, render_template
+    from flask import Flask, render_template, request, redirect
     app = Flask(__name__)
     # THIS IS GOING TO MOVE IN THE FUTURE
     @app.route('/') 
