@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 30px 300px;
+}
+h1{
+    font-size: 3rem;
+    color: gold;
+    margin-bottom: 10px;
+}
+#main1{
+    padding: 40px 200px 40px 40px;
+    background-color: grey;
+}
+#main{
+    display: flex;
+    justify-content: space-between;
+}
+button{
+    border-radius: 5px;
+    margin-top: 50px;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100px;
+    background-color: gold;
+}
+button:hover{
+    background-color: grey;
+    color: white;
+}
+p{
+    font-size: 1.5rem;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
