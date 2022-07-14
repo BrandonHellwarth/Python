@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxi Co</title>
+</head>
+<body>
+    <h1>Taxi Co</h1>
+    <h3>Add Driver</h3>
+    <form action="driver/create" method ="post">
+        <input type="text" name = "first_name" id ="first_name" placeholder ="first name">
+        <input type="text" name = "last_name" id ="last_name" placeholder ="last name">
+        <input type="text" name = "email" id ="email" placeholder ="email">
+        <input type="text" name = "phone_num" id ="phone_num" placeholder ="phone number">
+        <button>Add driver</button>
+    </form>
+    <h3>All Drivers</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Fullname</th>
+                <th>level</th>
+                <th>email</th>
+                <th>phone number</th>
+                <th>Joined</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for driver in all_drivers %}
+            <tr>
+                <td>{{ driver.fullname }}</td>
+                <td>{{ driver.level }}</td>
+                <td>{{ driver.email }}</td>
+                <td>{{ driver.phone_num }}</td>
+                <td>{{ driver.created_at }}</td>
+                <td><a href="">Edit</a></td>
+                <td><a href="">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
