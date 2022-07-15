@@ -8,28 +8,37 @@ pip install pipenv
 - Navigate into that folder
 - create your virtual env
     ```
-    pipenv install flask
+    python -m pipenv install flask pymysql
     ```
-- WARNING check for the files "pipfile" and "pipfile.lock"
+- `WARNING` check for the files "pipfile" and "pipfile.lock"
     - If you dont see those you need to fix it right away!
 -launch the virtual env
     ```
-    pipenv shell or varient
+    python -m pipenv shell or varient
     ```
 - file structure list
     - assignment folder
-    - template
-        -index.html
-    - static
-        -css
-            - style.css
-        -js
-            -script.js
-    - pipfile
-    - pipfile.lock
-    - server.py
+        - flask-app
+            - config
+                - mysqlconnection.py
+            - controllers
+                - controller_driver.py
+                - controller_car.py
+            - models
+                - model_drivers.py
+                - model_car.py
+            - templates
+                - index.html
+                - \_\_init__.py
+            - static
+                - css
+                    - style.css
+                - js
+                    - script.js
+        - pipfile
+        - pipfile.lock
+        - server.py
 - create a server.py file
--
 ```py
 from flask import Flask, render_template, redirect, request, session, pymysql
 # import the class from friend.py
