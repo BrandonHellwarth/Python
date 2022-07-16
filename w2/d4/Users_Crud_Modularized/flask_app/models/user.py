@@ -1,6 +1,6 @@
 # import the function that will return an instance of a connection
+from winreg import QueryInfoKey
 from flask_app.config.mysqlconnection import connectToMySQL
-# model the class after the friend table from our database
 class User:
     @classmethod
     def save(cls, data ):
@@ -27,7 +27,17 @@ class User:
             users.append( cls(user) )
         return users
     @classmethod
-    def get_one(cls, id):
-        query = "SELECT * FROM users WHERE id =%(id)s"
-        results = connectToMySQL('users_schema').query_db(query)
-        return results
+    def get_one(cls, data):
+        query = "SELECT * FROM users WHERE id =%(id)s;"
+        result = connectToMySQL('users_schema').query_db(query, data)
+        return cls(result[0])
+    @classmethod
+    def edit(cls, data):
+        query = "UPDATE users SET last_name = %(lname)s, first_name = %(fname)s, email = %(email)s, updated_at = %(updated_at)s WHERE id = %(id)s"
+        result = connectToMySQL('users_schema').query_db(query, data)
+        return
+    @classmethod
+    def delete(cls, data):
+        query = "DELETE FROM users WHERE id = %(id)s;"
+        result = connectToMySQL('users_schema').query_db(query, data)
+        return

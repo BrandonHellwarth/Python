@@ -40,7 +40,7 @@ pip install pipenv
         - server.py
 - create a server.py file
 ```py
-from flask import Flask, render_template, redirect, request, session, pymysql
+from flask import Flask, render_template, redirect, request, session, pymysql, flask-bcrypt
 # import the class from friend.py
 from friend import Friend
 app = Flask(__name__)

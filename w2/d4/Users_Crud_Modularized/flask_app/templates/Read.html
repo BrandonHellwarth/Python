@@ -10,14 +10,12 @@
     <h1>All Users</h1>
     <a href="/create_user">Add a New User</a>
     {% for user in users %}
-        <form action="/process_user" method='post'>
-            <p>ID: <span name ="span">{{user.id}}</span></p>
+            <p>ID: {{user.id}}</p>
             <p>First Name: {{user.first_name}}</p>
             <p>Last Name: {{user.last_name}}</p>
             <p>email: {{user.email}}</p>
-            <p>Actions: <a href="">Show</a></p><!--How would you make each link unique to its user without creating a new html file for each user? I need to be able to request.form user.id as it is the only absolutly unique quality between the users. So that when process_user runs it can distinguish which user it needs to find. Then Read_one.html can create a page for said user.-->
+            <p>Actions: <a href="/read_one/{{user.id}}">Show</a> <a href="/edit/{{user.id}}">Edit</a> <a href="/delete/{{user.id}}">Delete</a></p>
             <hr>
-        </form>
     {% endfor %}
     
 </body>
