@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='welcome.css')}}">
+</head>
+<body>
+    <h1>Welcome, {{user.first_name}}</h1>
+    <div id="nav">
+        <p>All posted recipes:</p>
+        <div>
+            <a href="/create/{{user.id}}">+ Create</a>
+            <a href="/">Logout</a>
+        </div>
+    </div>
+    <div id="main">
+        <div id="name" class="box">
+            <p class="top">Name</p>
+            {% for recipe in recipes %}
+                <p>{{ recipe.name }}</p>
+            {% endfor %}
+        </div>
+        <div id="under" class="box">
+            <p class="top">Under</p>
+            {% for recipe in recipes %}
+                <p>{{ recipe.under }}</p>
+            {% endfor %}
+        </div>
+        <div id="posted" class="box">
+            <p class="top">Posted By</p>
+            {% for recipe in recipes %}
+                <p>{{ recipe.posted_by }}</p>
+            {% endfor %}
+        </div>
+        <div id="actions" class="box">
+            <p class="top">Actions</p>
+            {% for recipe in recipes %}
+            <div>
+                <a href="/view/{{user.id}}/{{recipe.id}}">View Recipe</a>
+                {% if user.id == recipe.user_id: %}
+                    <a href="/edit/{{user.id}}/{{recipe.id}}"> | Edit</a>
+                    <a href="/delete/{{user.id}}/{{recipe.id}}"> | Delete</a>
+            </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='edit.css')}}">
+</head>
+<body>
+    <div id="header">
+        <h1>Edit Recipe!</h1>
+        <div id="links">
+            <a href="/welcome/{{user.id}}">Back to Recipes</a>
+            <a href="/">Logout</a>
+        </div>
+    </div>
+    {% with messages = get_flashed_messages(category_filter=['cre']) %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <form action="/process_edit_recipe/{{user.id}}/{{recipe.id}}" method="post" id="main">
+        <div id="left">
+            <label for="name">Name</label>
+            <input type="text" name="name" value="{{recipe.name}}" class="text">
+            <label for="desc">Description</label>
+            <input type="textarea" cols="30" rows="10" name="desc" value="{{recipe.description}}" class="text">
+            <label for="instr">Instructions</label>
+            <input type="textarea" cols="30" rows="10" name="instr" value="{{recipe.instructions}}" class="text">
+        </div>
+        <div id="right">
+            <label for="date">Date Cooked/Made:</label>
+            <input type="date" name="date" value="{{recipe.date_made}}" id="date">
+            <label for="under">Under 30 minutes?</label>
+            <input type="radio" name="under" value="1" checked="checked" class="check">Yes
+            <input type="radio" name="under" value="0" class="check">No
+            <button>Submit</button>
+        </div>
+    </form>
+</body>
+</html>

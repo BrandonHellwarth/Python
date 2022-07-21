@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <h1>Recipe Share</h1>
+    <div id="main">
+        <form action="/process_register" method="post" id="left">
+            <h2>Register</h2>
+            {% with messages = get_flashed_messages(category_filter=['reg']) %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <div class="row">
+                <label for="fname">First Name:</label>
+                <input type="text" name="fname">
+            </div>
+            <div class="row">
+                <label for="lname">Last Name:</label>
+                <input type="text" name="lname">
+            </div>
+            <div class="row">
+                <label for="email">Email:</label>
+                <input type="text" name="email">
+            </div>
+            <div class="row">
+                <label for="pword">Password:</label>
+                <input type="text" name="pword">
+            </div>
+            <div class="row">
+                <label for="pw_confirm">Confirm PW:</label>
+                <input type="text" name="pw_confirm">
+            </div>
+            <button class="btn">Submit</button>
+        </form>
+        <form action="/process_login" method="post" id="right">
+            <h2>Log In</h2>
+            {% with messages = get_flashed_messages(category_filter=['log']) %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <div class="row">
+                <label for="email">Email:</label>
+                <input type="text" name="email">
+            </div>
+            <div class="row">
+                <label for="pword">Password:</label>
+                <input type="text" name="pword">
+            </div>
+            <button class="btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

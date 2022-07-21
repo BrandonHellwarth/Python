@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 30px 100px;
+}
+h2{
+    font-size: 3rem;
+}
+h1{
+    font-size: 4rem;
+}
+h4{
+    font-size: 1.5rem;
+}
+#header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#links{
+    font-size: 1.5rem;
+}
+#nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#main{
+    border: 2px solid black;
+    padding: 10px 20px;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

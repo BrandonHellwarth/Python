@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 30px 100px;
+}
+h1{
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+#nav{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+}
+#main{
+    display: flex;
+}
+.box{
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    padding: 10px;
+    font-size: 1.2rem;
+}
+.top{
+    background-color: lightgray;
+}
+.row2{
+    background-color: lightgray;
+}
+#name{
+    border-left: 2px solid black;
+}
+#actions{
+    border-right: 2px solid black;
+}
